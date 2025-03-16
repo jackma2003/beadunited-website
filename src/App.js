@@ -1,9 +1,18 @@
 // src/App.js
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import { FaShoppingCart, FaUser, FaSearch, FaFacebook, FaInstagram, FaPinterest, FaEnvelope } from 'react-icons/fa';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [liveText, setLiveText] = useState('');
+  
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Handle search logic here
+    console.log('Searching for:', searchQuery);
+  };
+  
   return (
     <div className="App">
       <header className="header">
@@ -29,6 +38,38 @@ function App() {
             <h1>Craft Your Perfect Design</h1>
             <p>Discover our premium collection of handcrafted beads and jewelry supplies. From glass to gemstones, we have everything you need to bring your creative vision to life.</p>
             <button className="cta-button">Explore Collection</button>
+            
+            {/* Live Text Box inside hero */}
+            <div className="hero-live-text-box">
+              <h3>What's on your mind?</h3>
+              <textarea 
+                value={liveText}
+                onChange={(e) => setLiveText(e.target.value)}
+                placeholder="Share your thoughts or what you're looking for..."
+                className="live-text-input"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Search Bar Section */}
+        <section className="search-section">
+          <div className="container">
+            <div className="search-container">
+              <h3>Find Exactly What You Need</h3>
+              <form onSubmit={handleSearchSubmit} className="search-form">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search for beads, findings, chains..."
+                  className="search-input"
+                />
+                <button type="submit" className="search-button">
+                  <FaSearch /> Search
+                </button>
+              </form>
+            </div>
           </div>
         </section>
 
