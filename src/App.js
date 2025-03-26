@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from 'react';
-import './index.css';
+import './styles/App.css';
 import { FaShoppingCart, FaUser, FaSearch, FaFacebook, FaInstagram, FaPinterest, FaEnvelope } from 'react-icons/fa';
 
 function App() {
