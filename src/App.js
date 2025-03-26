@@ -120,27 +120,27 @@ function App() {
           <div className="category-grid">
             {/* Category 1 */}
             <div className="category-card">
-              <img src="https://via.placeholder.com/400x300" alt="Glass Beads" className="category-image" />
+              <img src="/beads.png" alt="Glass Beads" className="category-image" />
               <div className="category-overlay">
-                <h3 className="category-name">Glass</h3>
+                <h3 className="category-name">Beads</h3>
                 <button className="category-button">Shop Now</button>
               </div>
             </div>
 
             {/* Category 2 */}
             <div className="category-card">
-              <img src="https://via.placeholder.com/400x300" alt="Stone Beads" className="category-image" />
+              <img src="/chain.png" alt="Stone Beads" className="category-image" />
               <div className="category-overlay">
-                <h3 className="category-name">Stone</h3>
+                <h3 className="category-name">Chains</h3>
                 <button className="category-button">Shop Now</button>
               </div>
             </div>
 
             {/* Category 3 */}
             <div className="category-card">
-              <img src="https://via.placeholder.com/400x300" alt="Metal Findings" className="category-image" />
+              <img src="/findings.png" alt="Metal Findings" className="category-image" />
               <div className="category-overlay">
-                <h3 className="category-name">Metal</h3>
+                <h3 className="category-name">Findings</h3>
                 <button className="category-button">Shop Now</button>
               </div>
             </div>
