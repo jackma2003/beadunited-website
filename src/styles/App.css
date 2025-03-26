@@ -94,7 +94,7 @@ body {
 
 /* === HERO SECTION === */
 .hero {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  background: url("/public/livetext.png") center/cover no-repeat;
   color: var(--white);
   text-align: center;
   padding: 100px 0;
@@ -105,7 +105,7 @@ body {
 .hero::before {
   content: '';
   position: absolute;
-  top: -50px;
+  top: 0px;
   right: -50px;
   width: 200px;
   height: 200px;

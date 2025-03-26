@@ -33,7 +33,8 @@ function App() {
       </header>
       
       <main>
-        <section className="hero">
+      <section className="hero">
+          <div className="hero-overlay"></div>
           <div className="hero-content fade-in">
             <h1>Craft Your Perfect Design</h1>
             <p>Discover our premium collection of handcrafted beads and jewelry supplies. From glass to gemstones, we have everything you need to bring your creative vision to life.</p>
@@ -79,7 +80,7 @@ function App() {
             {/* Product 1 */}
             <div className="product-card">
               <div className="product-image">
-                <img src="https://via.placeholder.com/300x300" alt="Colorful Glass Beads" />
+                <img src="/beads.png" alt="Colorful Glass Beads" />
               </div>
               <div className="product-info">
                 <h3 className="product-name">Colorful Glass Beads Mix</h3>
@@ -91,7 +92,7 @@ function App() {
             {/* Product 2 */}
             <div className="product-card">
               <div className="product-image">
-                <img src="https://via.placeholder.com/300x300" alt="Crystal Pendant" />
+                <img src="/chain.png" alt="Crystal Pendant" />
               </div>
               <div className="product-info">
                 <h3 className="product-name">Crystal Pendant Collection</h3>
@@ -103,7 +104,7 @@ function App() {
             {/* Product 3 */}
             <div className="product-card">
               <div className="product-image">
-                <img src="https://via.placeholder.com/300x300" alt="Silver Findings" />
+                <img src="/findings.png" alt="Silver Findings" />
               </div>
               <div className="product-info">
                 <h3 className="product-name">Silver Findings Set</h3>
