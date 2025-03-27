@@ -5,7 +5,6 @@ import { FaShoppingCart, FaUser, FaSearch, FaFacebook, FaInstagram, FaPinterest,
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [liveText, setLiveText] = useState('');
   
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -36,19 +35,11 @@ function App() {
       <section className="hero">
           <div className="hero-overlay"></div>
           <div className="hero-content fade-in">
-            <h1>Craft Your Perfect Design</h1>
-            <p>Discover our premium collection of handcrafted beads and jewelry supplies. From glass to gemstones, we have everything you need to bring your creative vision to life.</p>
-            <button className="cta-button">Explore Collection</button>
-            
-            {/* Live Text Box inside hero */}
-            <div className="hero-live-text-box">
-              <h3>What's on your mind?</h3>
-              <textarea 
-                value={liveText}
-                onChange={(e) => setLiveText(e.target.value)}
-                placeholder="Share your thoughts or what you're looking for..."
-                className="live-text-input"
-              />
+            {/* Relocated content to bottom left */}
+            <div className="hero-bottom-left">
+              <h1>Craft Your Perfect Design</h1>
+              <p>Discover our premium collection of handcrafted beads and jewelry supplies. From glass to gemstones, we have everything you need to bring your creative vision to life.</p>
+              <button className="cta-button">Shop the Women's Collection</button>
             </div>
           </div>
         </section>
@@ -75,7 +66,9 @@ function App() {
         </section>
 
         <section className="featured-section">
-          <h2 className="section-title">Featured Products</h2>
+          <div className="collection-header">
+            <h2 className="collection-title">FEATURED PRODUCTS</h2>
+          </div>
           <div className="product-grid">
             {/* Product 1 */}
             <div className="product-card">
@@ -85,7 +78,7 @@ function App() {
               <div className="product-info">
                 <h3 className="product-name">Colorful Glass Beads Mix</h3>
                 <p className="product-price">$14.99</p>
-                <button className="product-button">Add to Cart</button>
+                <a href="#" className="product-link">SHOP THE WOMEN'S COLLECTION</a>
               </div>
             </div>
 
@@ -97,7 +90,7 @@ function App() {
               <div className="product-info">
                 <h3 className="product-name">Crystal Pendant Collection</h3>
                 <p className="product-price">$19.99</p>
-                <button className="product-button">Add to Cart</button>
+                <a href="#" className="product-link">SHOP THE WOMEN'S COLLECTION</a>
               </div>
             </div>
 
@@ -109,39 +102,41 @@ function App() {
               <div className="product-info">
                 <h3 className="product-name">Silver Findings Set</h3>
                 <p className="product-price">$24.99</p>
-                <button className="product-button">Add to Cart</button>
+                <a href="#" className="product-link">SHOP THE WOMEN'S COLLECTION</a>
               </div>
             </div>
           </div>
         </section>
 
         <section className="category-section">
-          <h2 className="section-title">Shop by Category</h2>
+          <div className="collection-header">
+            <h2 className="collection-title">SHOP BY CATEGORY</h2>
+          </div>
           <div className="category-grid">
             {/* Category 1 */}
             <div className="category-card">
               <img src="/beads.png" alt="Glass Beads" className="category-image" />
-              <div className="category-overlay">
+              <div className="category-info">
                 <h3 className="category-name">Beads</h3>
-                <button className="category-button">Shop Now</button>
+                <a href="#" className="product-link">SHOP THE WOMEN'S COLLECTION</a>
               </div>
             </div>
 
             {/* Category 2 */}
             <div className="category-card">
               <img src="/chain.png" alt="Stone Beads" className="category-image" />
-              <div className="category-overlay">
+              <div className="category-info">
                 <h3 className="category-name">Chains</h3>
-                <button className="category-button">Shop Now</button>
+                <a href="#" className="product-link">SHOP THE WOMEN'S COLLECTION</a>
               </div>
             </div>
 
             {/* Category 3 */}
             <div className="category-card">
               <img src="/findings.png" alt="Metal Findings" className="category-image" />
-              <div className="category-overlay">
+              <div className="category-info">
                 <h3 className="category-name">Findings</h3>
-                <button className="category-button">Shop Now</button>
+                <a href="#" className="product-link">SHOP THE WOMEN'S COLLECTION</a>
               </div>
             </div>
           </div>
