@@ -1,0 +1,201 @@
+/* AccountPage.css - David Yurman inspired styling */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .page-header h1:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Account container */
+  .account-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .account-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Login form */
+  .login-form,
+  .register-form {
+    padding: 40px;
+  }
+  
+  .login-form {
+    background-color: #f8f8f8;
+  }
+  
+  .login-form h2,
+  .register-form h2 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .login-form h2:after,
+  .register-form h2:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: #000;
+    bottom: -10px;
+    left: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: transparent;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #000;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .btn-primary {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #333;
+  }
+  
+  .forgot-password {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  /* Register form */
+  .register-form p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .register-form ul {
+    margin: 0 0 30px 20px;
+    padding: 0;
+  }
+  
+  .register-form li {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+    padding: 12px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .login-form,
+    .register-form {
+      padding: 30px 20px;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+  }

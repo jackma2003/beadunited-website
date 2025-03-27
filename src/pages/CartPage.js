@@ -1,24 +1,11 @@
 // src/pages/CartPage.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/CartPage.css';
 
 function CartPage() {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: 'Colorful Glass Beads Mix',
-      price: 14.99,
-      quantity: 2,
-      image: '/beads.png'
-    },
-    {
-      id: 2,
-      name: 'Crystal Pendant Collection',
-      price: 19.99,
-      quantity: 1,
-      image: '/chain.png'
-    }
-  ]);
+  // Initialize with empty cart
+  const [cartItems, setCartItems] = useState([]);
   
   const [subtotal, setSubtotal] = useState(0);
   
@@ -40,6 +27,26 @@ function CartPage() {
   
   const removeItem = (id) => {
     setCartItems(cartItems.filter(item => item.id !== id));
+  };
+  
+  // For demonstration purposes only - this would normally come from a cart service or context
+  const addDemoItems = () => {
+    setCartItems([
+      {
+        id: 1,
+        name: 'Colorful Glass Beads Mix',
+        price: 14.99,
+        quantity: 2,
+        image: '/beads.png'
+      },
+      {
+        id: 2,
+        name: 'Crystal Pendant Collection',
+        price: 19.99,
+        quantity: 1,
+        image: '/chain.png'
+      }
+    ]);
   };
   
   return (
@@ -66,19 +73,33 @@ function CartPage() {
                   <tr key={item.id}>
                     <td className="product-cell">
                       <img src={item.image} alt={item.name} className="cart-product-image" />
-                      <span>{item.name}</span>
-                    </td>
-                    <td>${item.price.toFixed(2)}</td>
-                    <td>
-                      <div className="quantity-controls">
-                        <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
-                        <span>{item.quantity}</span>
-                        <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                      <div className="product-info">
+                        <span className="product-name">{item.name}</span>
                       </div>
                     </td>
-                    <td>${(item.price * item.quantity).toFixed(2)}</td>
-                    <td>
-                      <button className="remove-btn" onClick={() => removeItem(item.id)}>Remove</button>
+                    <td className="price-cell">${item.price.toFixed(2)}</td>
+                    <td className="quantity-cell">
+                      <div className="quantity-controls">
+                        <button 
+                          className="quantity-btn" 
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        >
+                          -
+                        </button>
+                        <span className="quantity-value">{item.quantity}</span>
+                        <button 
+                          className="quantity-btn" 
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
+                    <td className="total-cell">${(item.price * item.quantity).toFixed(2)}</td>
+                    <td className="action-cell">
+                      <button className="remove-btn" onClick={() => removeItem(item.id)}>
+                        Remove
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -106,8 +127,15 @@ function CartPage() {
         </div>
       ) : (
         <div className="empty-cart">
-          <p>Your cart is empty</p>
-          <Link to="/products" className="continue-shopping">Start Shopping</Link>
+          <p>Your shopping cart is empty</p>
+          <p className="empty-cart-message">
+            Browse our collections and discover our premium beads and jewelry supplies.
+          </p>
+          <div className="empty-cart-buttons">
+            <Link to="/products" className="continue-shopping">Start Shopping</Link>
+            {/* Demo button - for development only */}
+            <button onClick={addDemoItems} className="demo-btn">Demo: Add Items</button>
+          </div>
         </div>
       )}
     </div>
